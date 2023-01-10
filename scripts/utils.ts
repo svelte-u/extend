@@ -1,14 +1,19 @@
-import fs from "fs-extra"
 import fg from "fast-glob"
-import path from "path"
-
+import fs from "fs-extra"
 import { readdir } from "fs/promises"
+import path from "path"
 import { fileURLToPath as file_url_to_path } from "url"
 
 const current_path = path.dirname(file_url_to_path(import.meta.url))
 
 export const DIR_ROOT = path.resolve(current_path, "../")
 export const DIR_SRC = path.resolve(DIR_ROOT, "src")
+
+interface ListFunctions {
+	name: string
+	path: string
+	module: string
+}
 
 /**
  *
@@ -25,12 +30,6 @@ export function group(
 		const groupList = acc[id] ?? []
 		return { ...acc, [id]: [...groupList, item] }
 	}, {}) satisfies Record<string, any>
-}
-
-interface ListFunctions {
-	name: string
-	path: string
-	module: string
 }
 
 /**

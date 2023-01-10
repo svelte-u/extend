@@ -2,8 +2,8 @@ import fs from "fs-extra"
 import path from "path"
 
 import {
-	DIR_SRC,
 	DIR_ROOT,
+	DIR_SRC,
 	gitignore,
 	list_functions,
 	update_package_json,
