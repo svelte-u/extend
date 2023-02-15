@@ -326,6 +326,5 @@ $RECYCLE.BIN/
 ### custom ###
 *.lock
 package-lock.json
-
-/jwt
-/qrcode
+/*.d.ts
+/*.js

@@ -29,7 +29,7 @@ export function group(
 		const id = fn(item)
 		const groupList = acc[id] ?? []
 		return { ...acc, [id]: [...groupList, item] }
-	}, {}) satisfies Record<string, any>
+	}, {}) as Record<string, any>
 }
 
 /**
@@ -56,7 +56,7 @@ async function get_submodules(dir: string, files: string[]) {
 			}
 		}
 	}
-	return submodules satisfies ListFunctions[]
+	return submodules as ListFunctions[]
 }
 
 /**
@@ -99,6 +99,10 @@ export async function list_functions(dir: string, ignore: string[] = []) {
 	return functions as Record<string, ListFunctions[]>
 }
 
+/**
+ * @remarks  Update the package.json exports.
+ * @param exports - the exports to update.
+ */
 export async function update_package_json(exports: Record<string, any>) {
 	const package_json_path = path.join(DIR_ROOT, "package.json")
 
@@ -109,22 +113,9 @@ export async function update_package_json(exports: Record<string, any>) {
 	await fs.writeJSON(package_json_path, pkg, { spaces: 4 })
 }
 
-export async function gitignore(packages: string[]) {
-	packages = packages.map((f) => `/${f}`)
-
-	const gitignore_path = path.join(DIR_ROOT, ".gitignore")
-
-	const gitignore = await fs.readFile(gitignore_path, "utf-8")
-
-	const lines = gitignore.split("\n")
-
-	const old_lines = lines.filter((line) => {
-		return !packages.includes(line)
-	})
-
-	await fs.writeFile(gitignore_path, [...old_lines, ...packages].join("\n"))
-}
-
+/**
+ * @remarks  Clear all build files.
+ */
 export async function clear() {
 	const files = await fg("*", {
 		onlyDirectories: true,
