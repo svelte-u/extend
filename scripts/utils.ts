@@ -117,9 +117,8 @@ export async function update_package_json(exports: Record<string, any>) {
  * @remarks  Clear all build files.
  */
 export async function clear() {
-	const files = await fg("*", {
-		onlyDirectories: true,
-		cwd: DIR_SRC,
+	const files = await fg(["*.js", "*.d.ts"], {
+		cwd: DIR_ROOT,
 		ignore: ["_*", "dist", "node_modules"],
 	})
 
