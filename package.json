@@ -23,6 +23,7 @@
         "clean": "tsx scripts/clean.ts",
         "git:add": "pnpm run build && pnpm run clean && git add .",
         "commit": "cz commit",
+        "format": "prettier --plugin-search-dir . --write .",
         "lint": "eslint .",
         "lint:fix": "pnpm run lint --fix",
         "release": "bumpp --all",
@@ -30,14 +31,21 @@
         "test:watch": "vitest --watch"
     },
     "exports": {
+        "./jwt": {
+            "import": "./jwt.js"
+        },
         "./qrcode": {
             "import": "./qrcode.js"
         }
     },
     "peerDependencies": {
+        "jwt-decode": "*",
         "qrcode": "*"
     },
     "peerDependenciesMeta": {
+        "jwt-decode": {
+            "optional": true
+        },
         "qrcode": {
             "optional": true
         }
@@ -55,6 +63,7 @@
         "eslint-plugin-tsdoc": "^0.2.17",
         "fast-glob": "^3.2.12",
         "fs-extra": "^11.1.0",
+        "jwt-decode": "^3.1.2",
         "prettier": "^2.8.4",
         "qrcode": "^1.5.1",
         "svelte": "^3.55.1",

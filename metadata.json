@@ -1,6 +1,7 @@
 {
-    "total": 1,
+    "total": 2,
     "packages": [
+        "jwt",
         "qrcode"
     ]
 }
