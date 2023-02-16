@@ -1,6 +1,7 @@
 {
-    "total": 2,
+    "total": 3,
     "packages": [
+        "idb_keyval",
         "jwt",
         "qrcode"
     ]

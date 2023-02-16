@@ -31,6 +31,9 @@
         "test:watch": "vitest --watch"
     },
     "exports": {
+        "./idb_keyval": {
+            "import": "./idb_keyval.js"
+        },
         "./jwt": {
             "import": "./jwt.js"
         },
@@ -39,10 +42,14 @@
         }
     },
     "peerDependencies": {
+        "idb-keyval": "*",
         "jwt-decode": "*",
         "qrcode": "*"
     },
     "peerDependenciesMeta": {
+        "idb-keyval": {
+            "optional": true
+        },
         "jwt-decode": {
             "optional": true
         },
@@ -63,6 +70,8 @@
         "eslint-plugin-tsdoc": "^0.2.17",
         "fast-glob": "^3.2.12",
         "fs-extra": "^11.1.0",
+        "idb-keyval": "^6.2.0",
+        "jsdom": "^21.1.0",
         "jwt-decode": "^3.1.2",
         "prettier": "^2.8.4",
         "qrcode": "^1.5.1",
