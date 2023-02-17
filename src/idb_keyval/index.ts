@@ -11,6 +11,18 @@ export interface IDBOptions {
 	on_error?: (error: unknown) => void
 }
 
+/**
+ * Wrapper around idb-keyval.
+ *
+ * @param key - The key to store the value under.
+ *
+ * @param value - The value to store. If store have already been initialized, this value will be ignored.
+ *
+ * @param options - Options
+ * - on_error - On error callback
+ *
+ * @returns A store of the value.
+ */
 export function idb(key: string, value?: any, options: IDBOptions = {}) {
 	const {
 		on_error = (e) => {
