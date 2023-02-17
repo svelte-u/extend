@@ -1,6 +1,7 @@
 {
-    "total": 5,
+    "total": 6,
     "packages": [
+        "change_case",
         "fcm",
         "fuse",
         "idb_keyval",

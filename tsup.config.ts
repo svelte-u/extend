@@ -6,7 +6,8 @@ export default <Options>{
         "jwt": "src/jwt/index.ts",
         "idb_keyval": "src/idb_keyval/index.ts",
         "fuse": "src/fuse/index.ts",
-        "fcm": "src/fcm/index.ts"
+        "fcm": "src/fcm/index.ts",
+        "change_case": "src/change_case/index.ts"
     },
     "outDir": "./",
     "clean": false,
