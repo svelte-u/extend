@@ -1,6 +1,7 @@
 {
-    "total": 6,
+    "total": 7,
     "packages": [
+        "async_validator",
         "change_case",
         "fcm",
         "fuse",

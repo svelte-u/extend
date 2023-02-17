@@ -31,6 +31,9 @@
         "test:watch": "vitest --watch"
     },
     "exports": {
+        "./async_validator": {
+            "import": "./async_validator.js"
+        },
         "./change_case": {
             "import": "./change_case.js"
         },
@@ -51,6 +54,7 @@
         }
     },
     "peerDependencies": {
+        "async-validator": "*",
         "change-case": "*",
         "firebase": "*",
         "fuse.js": "*",
@@ -59,6 +63,9 @@
         "qrcode": "*"
     },
     "peerDependenciesMeta": {
+        "async-validator": {
+            "optional": true
+        },
         "change-case": {
             "optional": true
         },
@@ -85,6 +92,7 @@
         "@types/qrcode": "^1.5.0",
         "@typescript-eslint/eslint-plugin": "^5.52.0",
         "@typescript-eslint/parser": "^5.52.0",
+        "async-validator": "^4.2.5",
         "bumpp": "^8.2.1",
         "change-case": "^4.1.2",
         "eslint": "^8.34.0",

@@ -8,6 +8,7 @@ specifiers:
   '@types/qrcode': ^1.5.0
   '@typescript-eslint/eslint-plugin': ^5.52.0
   '@typescript-eslint/parser': ^5.52.0
+  async-validator: ^4.2.5
   bumpp: ^8.2.1
   change-case: ^4.1.2
   eslint: ^8.34.0
@@ -38,6 +39,7 @@ devDependencies:
   '@types/qrcode': 1.5.0
   '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
   '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
+  async-validator: 4.2.5
   bumpp: 8.2.1
   change-case: 4.1.2
   eslint: 8.34.0
@@ -1704,6 +1706,10 @@ packages:
 
   /assertion-error/1.1.0:
     resolution: {integrity: sha512-jgsaNduz+ndvGyFt3uSuWqvy4lCnIJiovtouQN5JZHOKCS2QuhEdbcQHFhVksz2N2U9hXJo8odG7ETyWlEeuDw==}
+    dev: true
+
+  /async-validator/4.2.5:
+    resolution: {integrity: sha512-7HhHjtERjqlNbZtqNqy2rckN/SpOOlmDliet+lP7k+eKZEjPk3DgyeU9lIXLdeLz0uBbbVp+9Qdow9wJWgwwfg==}
     dev: true
 
   /asynckit/0.4.0:
