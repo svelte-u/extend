@@ -31,6 +31,9 @@
         "test:watch": "vitest --watch"
     },
     "exports": {
+        "./fuse": {
+            "import": "./fuse.js"
+        },
         "./idb_keyval": {
             "import": "./idb_keyval.js"
         },
@@ -42,11 +45,15 @@
         }
     },
     "peerDependencies": {
+        "fuse.js": "*",
         "idb-keyval": "*",
         "jwt-decode": "*",
         "qrcode": "*"
     },
     "peerDependenciesMeta": {
+        "fuse.js": {
+            "optional": true
+        },
         "idb-keyval": {
             "optional": true
         },
@@ -70,6 +77,7 @@
         "eslint-plugin-tsdoc": "^0.2.17",
         "fast-glob": "^3.2.12",
         "fs-extra": "^11.1.0",
+        "fuse.js": "^6.6.2",
         "idb-keyval": "^6.2.0",
         "jsdom": "^21.1.0",
         "jwt-decode": "^3.1.2",

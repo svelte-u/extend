@@ -4,7 +4,8 @@ export default <Options>{
     "entry": {
         "qrcode": "src/qrcode/index.ts",
         "jwt": "src/jwt/index.ts",
-        "idb_keyval": "src/idb_keyval/index.ts"
+        "idb_keyval": "src/idb_keyval/index.ts",
+        "fuse": "src/fuse/index.ts"
     },
     "outDir": "./",
     "clean": false,
