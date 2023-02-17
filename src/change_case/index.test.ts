@@ -1,8 +1,7 @@
-import { describe, expect, test } from "vitest"
+import type { Options } from "change-case"
+import { describe, expect, it } from "vitest"
 
 import { change_case } from "."
-
-import type { Options } from "change-case"
 import type { ChangeCaseType } from "."
 
 describe("change_case", () => {
@@ -10,10 +9,18 @@ describe("change_case", () => {
 		helloWorld: string
 		svelteaction: string
 	}
+
 	type ObjectTypes = Omit<Record<ChangeCaseType, objectValue>, "camelCase">
+
 	const helloWorld = "helloWorld"
+
 	const svelteaction = "svelte action"
-	test("base", () => {
+
+	it("should be defined", () => {
+		expect(change_case).toBeDefined()
+	})
+
+	it("base", () => {
 		const obj: ObjectTypes = {
 			capitalCase: {
 				helloWorld: "Hello World",
@@ -65,7 +72,7 @@ describe("change_case", () => {
 		})
 	})
 
-	test("options", () => {
+	it("options", () => {
 		const options: Options = {
 			delimiter: "-",
 		}
