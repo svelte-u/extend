@@ -31,6 +31,9 @@
         "test:watch": "vitest --watch"
     },
     "exports": {
+        "./fcm": {
+            "import": "./fcm.js"
+        },
         "./fuse": {
             "import": "./fuse.js"
         },
@@ -45,12 +48,16 @@
         }
     },
     "peerDependencies": {
+        "firebase": "*",
         "fuse.js": "*",
         "idb-keyval": "*",
         "jwt-decode": "*",
         "qrcode": "*"
     },
     "peerDependenciesMeta": {
+        "firebase": {
+            "optional": true
+        },
         "fuse.js": {
             "optional": true
         },
@@ -76,6 +83,7 @@
         "eslint-config-prettier": "^8.6.0",
         "eslint-plugin-tsdoc": "^0.2.17",
         "fast-glob": "^3.2.12",
+        "firebase": "^9.17.1",
         "fs-extra": "^11.1.0",
         "fuse.js": "^6.6.2",
         "idb-keyval": "^6.2.0",
