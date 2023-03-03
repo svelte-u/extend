@@ -3,7 +3,7 @@ import type { Readable } from "svelte/store"
 import { to_readable, to_writable } from "@sveu/shared"
 import type { Dict } from "@sveu/shared"
 
-import Schema from "async-validator"
+import asyncValidator from "async-validator"
 import type { Rules, ValidateError, ValidateOption } from "async-validator"
 
 export type AsyncValidatorError = Error & {
@@ -22,6 +22,9 @@ export interface AsyncValidatorReturn {
 
 	error_fields: Readable<AsyncValidatorError["fields"] | undefined>
 }
+
+// @ts-expect-error Schema.default is exist in ssr mode
+const Schema = asyncValidator.default || asyncValidator
 
 /**
  * Wrapper for async-validator.
