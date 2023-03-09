@@ -1,12 +1,3 @@
-
-> ## 🛠 Status: In Development
-> @sveu/extend is currently in development. So we encourage you to use it and give us your feedback, but there are things that haven't been finalized yet and you can expect some changes.
->
-> Join us in [discord](https://discord.gg/XM5uQhDHfZ)
-
-
-<br/>
-
 <p align="center">
 <img height="150" src="https://avatars.githubusercontent.com/u/120715197" />
 
@@ -21,7 +12,7 @@
 </a>
 
 <a href="" target="_blank">
-    <img src="https://img.shields.io/static/v1?label=functions&message=0&color=50a36f">
+    <img src="https://img.shields.io/static/v1?label=functions&message=100&color=50a36f">
 </a>
 
 </p>
@@ -35,7 +26,7 @@ The key features are:
 * **SSR Friendly 🕺**: Works perfectly with server-side.
 * **Easy 💫**: Designed to be easy to use and learn. Less time reading docs.
 * **Interactive demos 🎉** : Documentation of functions also come with interactive demos!.
-* **Feature Rich  🌈**: 0+ functions for you to choose from.
+* **Feature Rich  🌈**: 100+ functions for you to choose from.
 * **Fully 🌳 shakeable**: Only take what you want.
 
 ## Installation
@@ -44,13 +35,25 @@ The key features are:
 pnpm add -D @sveu/extend
 ```
 
+## 🧪 Example
+
+```svelte
+<script>
+ import { fcm } from "@sveu/extend/fcm"
+ 
+ const { token, error, supported, on_message } = fcm(firebase_app, {vapid_key:"my-key",})
+ 
+</script>
+```
+
 ## 🙏 Thanks
 
 This project is heavily inspired by the following awesome projects.
 
 - [vueuse/vueuse](https://github.com/vueuse/vueuse/)
 - [rayepps/radash](https://github.com/rayepps/radash)
-
+- [Python](https://python.org)
+- [Vue](https://vuejs.org)
 ## 📜 License
 
 [MIT License](#License) © 2022-PRESENT [Mohamed Nesredin](https://github.com/mohamed-kaizen)
