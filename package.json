@@ -51,6 +51,9 @@
         },
         "./qrcode": {
             "import": "./qrcode.js"
+        },
+        "./sortable": {
+            "import": "./sortable.js"
         }
     },
     "peerDependencies": {
@@ -60,7 +63,8 @@
         "fuse.js": "*",
         "idb-keyval": "*",
         "jwt-decode": "*",
-        "qrcode": "*"
+        "qrcode": "*",
+        "sortablejs": "*"
     },
     "peerDependenciesMeta": {
         "async-validator": {
@@ -83,6 +87,9 @@
         },
         "qrcode": {
             "optional": true
+        },
+        "sortablejs": {
+            "optional": true
         }
     },
     "devDependencies": {
@@ -90,6 +97,7 @@
         "@types/fs-extra": "^11.0.1",
         "@types/node": "^18.13.0",
         "@types/qrcode": "^1.5.0",
+        "@types/sortablejs": "^1.15.1",
         "@typescript-eslint/eslint-plugin": "^5.52.0",
         "@typescript-eslint/parser": "^5.52.0",
         "async-validator": "^4.2.5",
@@ -107,6 +115,7 @@
         "jwt-decode": "^3.1.2",
         "prettier": "^2.8.4",
         "qrcode": "^1.5.1",
+        "sortablejs": "^1.15.0",
         "svelte": "^3.55.1",
         "tsup": "^6.6.3",
         "tsx": "^3.12.3",

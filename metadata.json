@@ -1,5 +1,5 @@
 {
-    "total": 7,
+    "total": 8,
     "packages": [
         "async_validator",
         "change_case",
@@ -7,6 +7,7 @@
         "fuse",
         "idb_keyval",
         "jwt",
-        "qrcode"
+        "qrcode",
+        "sortable"
     ]
 }

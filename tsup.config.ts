@@ -8,7 +8,8 @@ export default <Options>{
         "fuse": "src/fuse/index.ts",
         "fcm": "src/fcm/index.ts",
         "change_case": "src/change_case/index.ts",
-        "async_validator": "src/async_validator/index.ts"
+        "async_validator": "src/async_validator/index.ts",
+        "sortable": "src/sortable/index.ts"
     },
     "outDir": "./",
     "clean": false,
