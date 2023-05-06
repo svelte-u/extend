@@ -1,7 +1,7 @@
 {
     "name": "@sveu/extend",
     "version": "0.4.0",
-    "packageManager": "pnpm@7.20.0",
+    "packageManager": "pnpm@8.4.0",
     "description": "A collection of 3rd party integrations for Svelte",
     "author": "Mohamed Nesredin<https://github.com/Mohamed-Kaizen>",
     "license": "MIT",
@@ -26,7 +26,7 @@
         "format": "prettier --plugin-search-dir . --write .",
         "lint": "eslint .",
         "lint:fix": "pnpm run lint --fix",
-        "release": "bumpp --all",
+        "release": "bumpp",
         "test": "vitest run",
         "test:watch": "vitest --watch"
     },
@@ -95,37 +95,37 @@
     "devDependencies": {
         "@trivago/prettier-plugin-sort-imports": "^4.1.1",
         "@types/fs-extra": "^11.0.1",
-        "@types/node": "^18.15.3",
+        "@types/node": "^20.1.0",
         "@types/qrcode": "^1.5.0",
         "@types/sortablejs": "^1.15.1",
-        "@typescript-eslint/eslint-plugin": "^5.55.0",
-        "@typescript-eslint/parser": "^5.55.0",
+        "@typescript-eslint/eslint-plugin": "^5.59.2",
+        "@typescript-eslint/parser": "^5.59.2",
         "async-validator": "^4.2.5",
-        "bumpp": "^8.2.1",
+        "bumpp": "^9.1.0",
         "change-case": "^4.1.2",
-        "eslint": "^8.36.0",
-        "eslint-config-prettier": "^8.7.0",
+        "eslint": "^8.40.0",
+        "eslint-config-prettier": "^8.8.0",
         "eslint-plugin-tsdoc": "^0.2.17",
         "fast-glob": "^3.2.12",
         "firebase": "^9.18.0",
-        "fs-extra": "^11.1.0",
+        "fs-extra": "^11.1.1",
         "fuse.js": "^6.6.2",
         "idb-keyval": "^6.2.0",
-        "jsdom": "^21.1.1",
+        "jsdom": "^22.0.0",
         "jwt-decode": "^3.1.2",
-        "prettier": "^2.8.4",
+        "prettier": "^2.8.8",
         "qrcode": "^1.5.1",
         "sortablejs": "^1.15.0",
-        "svelte": "^3.57.0",
-        "tsup": "^6.6.3",
-        "tsx": "^3.12.5",
-        "typescript": "^4.9.5",
-        "vitest": "^0.29.3"
+        "svelte": "^3.59.0",
+        "tsup": "^6.7.0",
+        "tsx": "^3.12.7",
+        "typescript": "^5.0.4",
+        "vitest": "^0.31.0"
     },
     "publishConfig": {
         "access": "public"
     },
     "dependencies": {
-        "@sveu/shared": "^0.9.0"
+        "@sveu/shared": "^0.10.1"
     }
 }
