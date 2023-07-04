@@ -1,6 +1,6 @@
 {
     "name": "@sveu/extend",
-    "version": "0.4.0",
+    "version": "1.0.0",
     "packageManager": "pnpm@8.4.0",
     "description": "A collection of 3rd party integrations for Svelte",
     "author": "Mohamed Nesredin<https://github.com/Mohamed-Kaizen>",
