@@ -41,7 +41,7 @@ pnpm add -D @sveu/extend
 <script>
  import { fcm } from "@sveu/extend/fcm"
  
- const { token, error, supported, on_message } = fcm(firebase_app, {vapid_key:"my-key",})
+ const { token, error, supported, onMessage } = fcm(firebase_app, "my-vapid-key")
  
 </script>
 ```
