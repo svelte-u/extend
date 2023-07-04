@@ -13,9 +13,14 @@ export type ChangeCaseType = keyof typeof _changeCase
  *
  * @param options - [Change-case options](https://github.com/blakeembrey/change-case#options)
  *
+ * @example
+ * ```ts
+ * const output  = changeCase("Hello world!", "camelCase")
+ * ```
+ *
  * @returns Changed string
  */
-export function change_case(
+export function changeCase(
 	input: string,
 	type: ChangeCaseType,
 	options?: Options | undefined

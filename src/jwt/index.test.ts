@@ -32,7 +32,7 @@ describe("jwt", () => {
 	it("decode jwt with error", () => {
 		const spy = vitest.fn()
 
-		const { header, payload } = jwt("bad-token", { on_error: spy })
+		const { header, payload } = jwt("bad-token", { onError: spy })
 
 		expect(header).toBe(null)
 

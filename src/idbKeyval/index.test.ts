@@ -122,7 +122,7 @@ describe("idb_keyval", () => {
 			KEY1,
 			{ count: 0 },
 			{
-				on_error: (e) => {
+				onError: (e) => {
 					expect(e).toBeInstanceOf(Error)
 				},
 			}

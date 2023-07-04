@@ -31,11 +31,8 @@
         "test:watch": "vitest --watch"
     },
     "exports": {
-        "./async_validator": {
-            "import": "./async_validator.js"
-        },
-        "./change_case": {
-            "import": "./change_case.js"
+        "./changeCase": {
+            "import": "./changeCase.js"
         },
         "./fcm": {
             "import": "./fcm.js"
@@ -43,8 +40,8 @@
         "./fuse": {
             "import": "./fuse.js"
         },
-        "./idb_keyval": {
-            "import": "./idb_keyval.js"
+        "./idbKeyval": {
+            "import": "./idbKeyval.js"
         },
         "./jwt": {
             "import": "./jwt.js"
@@ -95,37 +92,37 @@
     "devDependencies": {
         "@trivago/prettier-plugin-sort-imports": "^4.1.1",
         "@types/fs-extra": "^11.0.1",
-        "@types/node": "^20.1.0",
-        "@types/qrcode": "^1.5.0",
+        "@types/node": "^20.3.3",
+        "@types/qrcode": "^1.5.1",
         "@types/sortablejs": "^1.15.1",
-        "@typescript-eslint/eslint-plugin": "^5.59.2",
-        "@typescript-eslint/parser": "^5.59.2",
+        "@typescript-eslint/eslint-plugin": "^5.61.0",
+        "@typescript-eslint/parser": "^5.61.0",
         "async-validator": "^4.2.5",
-        "bumpp": "^9.1.0",
+        "bumpp": "^9.1.1",
         "change-case": "^4.1.2",
-        "eslint": "^8.40.0",
+        "eslint": "^8.44.0",
         "eslint-config-prettier": "^8.8.0",
         "eslint-plugin-tsdoc": "^0.2.17",
-        "fast-glob": "^3.2.12",
-        "firebase": "^9.18.0",
+        "fast-glob": "^3.3.0",
+        "firebase": "^9.23.0",
         "fs-extra": "^11.1.1",
         "fuse.js": "^6.6.2",
-        "idb-keyval": "^6.2.0",
-        "jsdom": "^22.0.0",
+        "idb-keyval": "^6.2.1",
+        "jsdom": "^22.1.0",
         "jwt-decode": "^3.1.2",
         "prettier": "^2.8.8",
-        "qrcode": "^1.5.1",
+        "qrcode": "^1.5.3",
         "sortablejs": "^1.15.0",
-        "svelte": "^3.59.0",
-        "tsup": "^6.7.0",
+        "svelte": "^4.0.3",
+        "tsup": "^7.1.0",
         "tsx": "^3.12.7",
-        "typescript": "^5.0.4",
-        "vitest": "^0.31.0"
+        "typescript": "^5.1.6",
+        "vitest": "^0.32.4"
     },
     "publishConfig": {
         "access": "public"
     },
     "dependencies": {
-        "@sveu/shared": "^0.10.1"
+        "@sveu/shared": "^1.0.1"
     }
 }

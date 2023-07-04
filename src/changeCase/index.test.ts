@@ -1,10 +1,10 @@
 import type { Options } from "change-case"
 import { describe, expect, it } from "vitest"
 
-import { change_case } from "."
+import { changeCase } from "."
 import type { ChangeCaseType } from "."
 
-describe("change_case", () => {
+describe("changeCase", () => {
 	interface objectValue {
 		helloWorld: string
 		svelteaction: string
@@ -17,7 +17,7 @@ describe("change_case", () => {
 	const svelteaction = "svelte action"
 
 	it("should be defined", () => {
-		expect(change_case).toBeDefined()
+		expect(changeCase).toBeDefined()
 	})
 
 	it("base", () => {
@@ -65,9 +65,9 @@ describe("change_case", () => {
 		}
 		const arr = Object.keys(obj) as Array<keyof ObjectTypes>
 		arr.forEach((key) => {
-			const hResult = change_case(helloWorld, key)
+			const hResult = changeCase(helloWorld, key)
 			expect(hResult).toBe(obj[key].helloWorld)
-			const sResult = change_case(svelteaction, key)
+			const sResult = changeCase(svelteaction, key)
 			expect(sResult).toBe(obj[key].svelteaction)
 		})
 	})
@@ -76,9 +76,9 @@ describe("change_case", () => {
 		const options: Options = {
 			delimiter: "-",
 		}
-		const hResult = change_case(helloWorld, "camelCase", options)
+		const hResult = changeCase(helloWorld, "camelCase", options)
 		expect(hResult).toBe("hello-World")
-		const sResult = change_case(svelteaction, "camelCase", options)
+		const sResult = changeCase(svelteaction, "camelCase", options)
 		expect(sResult).toBe("svelte-Action")
 	})
 })

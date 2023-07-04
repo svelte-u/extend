@@ -11,7 +11,7 @@ describe("fuse", () => {
 		const data = [{ name: "foo" }, { name: "bar" }, { name: "baz" }]
 
 		const { results } = fuse("foo", data, {
-			fuse_options: {
+			fuseOptions: {
 				keys: ["name"],
 			},
 		})
@@ -28,7 +28,7 @@ describe("fuse", () => {
 		const data = [{ name: "foo" }, { name: "bar" }, { name: "baz" }]
 
 		const { results } = fuse("bar", data, {
-			fuse_options: {
+			fuseOptions: {
 				keys: ["name"],
 			},
 			limit: 2,
@@ -49,10 +49,10 @@ describe("fuse", () => {
 		const data = [{ name: "foo" }, { name: "bar" }, { name: "baz" }]
 
 		const { results } = fuse("", data, {
-			fuse_options: {
+			fuseOptions: {
 				keys: ["name"],
 			},
-			match_when_empty: true,
+			matchWhenEmpty: true,
 		})
 
 		expect(results).toEqual([

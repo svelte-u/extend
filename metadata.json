@@ -1,11 +1,10 @@
 {
-    "total": 8,
+    "total": 7,
     "packages": [
-        "async_validator",
-        "change_case",
+        "changeCase",
         "fcm",
         "fuse",
-        "idb_keyval",
+        "idbKeyval",
         "jwt",
         "qrcode",
         "sortable"

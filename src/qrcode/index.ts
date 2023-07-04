@@ -1,4 +1,4 @@
-import { to_readable, to_writable } from "@sveu/shared"
+import { toReadable, toWritable } from "@sveu/shared"
 
 import QRCode from "qrcode"
 
@@ -9,17 +9,22 @@ import QRCode from "qrcode"
  *
  * @see options in https://github.com/soldair/node-qrcode#qr-code-options
  *
+ * @example
+ * ```ts
+ * const { output, pending, error } = qrcode("Hello world!")
+ * ```
+ *
  * @returns
  * - output - Readable store of the generated QR code.
  * - error  - Error if one occurred.
  * - pending - Whether the QR code is being generated.
  */
 export function qrcode(text: string, options?: QRCode.QRCodeToDataURLOptions) {
-	const output = to_writable<string>("")
+	const output = toWritable("")
 
-	const error = to_writable<boolean | unknown>(false)
+	const error = toWritable<boolean | unknown>(false)
 
-	const pending = to_writable(true)
+	const pending = toWritable(true)
 
 	/** Generate the QR code. */
 	async function generate() {
@@ -39,8 +44,8 @@ export function qrcode(text: string, options?: QRCode.QRCodeToDataURLOptions) {
 	generate()
 
 	return {
-		output: to_readable(output),
-		error: to_readable(error),
-		pending: to_readable(pending),
+		output: toReadable(output),
+		error: toReadable(error),
+		pending: toReadable(pending),
 	}
 }

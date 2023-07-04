@@ -30,13 +30,13 @@ pnpm git:add && pnpm commit
 
 ### Existing functions
 
-Feel free to enhance the existing functions. Please try not to introduce breaking changes unless absolutely necessary.
+Feel free to enhance the existing functions. You can add more tests, more examples, or even more features.
 
 ### New functions
 
 There are some notes for adding new functions
 
-- Before you start working, it's better to discuss the function you want to add in [discord](https://discord.gg/XM5uQhDHfZ).
+- Before you start working, it's better to discuss the function you want to add in [discord](https://discord.gg/nbkcHgDXPc).
 - Try to introduce 3rd-party dependencies as this package is aimed to be solving integration between svelte and other libraries.
 - If you'd like to add a function that doesn't depends on any 3rd-party libraries, please contribute to [@sveu/actions](https://github.com/svelte-u/actions), [@sveu/browser](https://github.com/svelte-u/browser) or [@sveu/shared](https://github.com/svelte-u/shared).
 - Install the 3rd-party library you want to use, `pnpm add -D <library>`.
@@ -76,19 +76,14 @@ for `index.ts` you should export the function with names.
 
 ```ts
 // DO
-export { my_fnction }
+export { myFunction }
 // Do
-export function my_function() {}
-
+export function myFunction() {}
 // DON'T
-export default my_function
+export default myFunction
 // DON'T
-export default function my_function() {}
+export default function myFunction() {}
 ```
-
-## Code Style
-
-We prefer [snake case syntax](https://en.wikipedia.org/wiki/Snake_case), and indent with 4 spaces.
 
 ## Thanks
 

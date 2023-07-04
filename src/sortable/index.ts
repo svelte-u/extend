@@ -30,6 +30,16 @@ export function move_list<T>(list: T[], from: number, to: number) {
  *
  * @param options - The options to pass to SortableJS. [See SortableJS docs](https://github.com/SortableJS/Sortable#options)
  *
+ * @example
+ * ```ts
+ *
+ * <ul use:sortable>
+ * 	<li>Item 1</li>
+ * 	<li>Item 2</li>
+ * 	<li>Item 3</li>
+ * </ul>
+ * ```
+ *
  */
 export function sortable(target: HTMLElement, options: Options = {}) {
 	const _sortable = new Sortable(target, { ...options })

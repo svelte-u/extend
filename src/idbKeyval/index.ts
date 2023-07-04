@@ -8,7 +8,7 @@ export interface IDBOptions {
 	 *
 	 * Default log error to `console.error`
 	 */
-	on_error?: (error: unknown) => void
+	onError?: (error: unknown) => void
 }
 
 /**
@@ -19,13 +19,25 @@ export interface IDBOptions {
  * @param value - The value to store. If store have already been initialized, this value will be ignored.
  *
  * @param options - Options
- * - on_error - On error callback
+ * - onError - On error callback
  *
+ * @example
+ * ```ts
+ * const store = idb("key", "value")
+ *
+ * const store = idb("key")
+ *
+ * const store = idb("key", null, {
+ * 	onError: (e) => {
+ * 		console.error(e)
+ * 	}
+ * })
+ * ```
  * @returns A store of the value.
  */
 export function idb(key: string, value?: any, options: IDBOptions = {}) {
 	const {
-		on_error = (e) => {
+		onError = (e) => {
 			console.error(e)
 		},
 	} = options
@@ -40,7 +52,7 @@ export function idb(key: string, value?: any, options: IDBOptions = {}) {
 				if (value !== undefined && value !== null) await set(key, value)
 			} else data.set(_value)
 		} catch (e) {
-			on_error(e)
+			onError(e)
 		}
 	}
 
@@ -60,7 +72,7 @@ export function idb(key: string, value?: any, options: IDBOptions = {}) {
 				else await update(key, () => new_data)
 			}
 		} catch (e) {
-			on_error(e)
+			onError(e)
 		}
 	}
 	return data

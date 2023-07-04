@@ -6,7 +6,7 @@ export interface FuseOptions<T> {
 	/**
 	 * Fuse.js options
 	 */
-	fuse_options?: _FuseOptions<T>
+	fuseOptions?: _FuseOptions<T>
 	/**
 	 * Number of results to return
 	 */
@@ -14,7 +14,7 @@ export interface FuseOptions<T> {
 	/**
 	 * Match all results when search term is empty
 	 */
-	match_when_empty?: boolean
+	matchWhenEmpty?: boolean
 }
 
 /**
@@ -26,17 +26,32 @@ export interface FuseOptions<T> {
  *
  * @param options - Options
  * - `limit` - The maximum number of results to return.
- * - `match_when_empty` - Match all results when search term is empty
- * - `fuse_options` - [Fuse.js options](https://fusejs.io/api/options.html)
+ * - `matchWhenEmpty` - Match all results when search term is empty
+ * - `fuseOptions` - [Fuse.js options](https://fusejs.io/api/options.html)
+ *
+ * @example
+ * ```ts
+ * const { results, ifuse } = fuse("Hello world!", data, {
+ * 	limit: 10,
+ * 	matchWhenEmpty: true,
+ * 	fuseOptions: {
+ * 		threshold: 0.3,
+ * 	},
+ * })
+ * ```
+ *
+ * @returns
+ * - `results` - The search results
+ * - `ifuse` - The Fuse.js instance
  */
 export function fuse<T>(search: string, data: T[], options: FuseOptions<T>) {
-	const { fuse_options, limit, match_when_empty } = options
+	const { fuseOptions, limit, matchWhenEmpty } = options
 
-	const fuse_instance = new Fuse(data ?? [], fuse_options)
+	const fuse_instance = new Fuse(data ?? [], fuseOptions)
 
 	let results
 
-	if (match_when_empty && !search)
+	if (matchWhenEmpty && !search)
 		results = data.map((item, index) => ({ item, refIndex: index }))
 	else results = fuse_instance.search(search, limit ? { limit } : undefined)
 

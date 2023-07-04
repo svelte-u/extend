@@ -1,13 +1,15 @@
-import { browser, to_readable, to_writable, unstore } from "@sveu/shared"
+import { browser, toReadable, toWritable, unstore } from "@sveu/shared"
 
 import type { FirebaseApp } from "firebase/app"
-import { getMessaging, getToken, onMessage } from "firebase/messaging"
+import {
+	onMessage as _onMessage,
+	getMessaging,
+	getToken,
+} from "firebase/messaging"
 import type { GetTokenOptions, Messaging } from "firebase/messaging"
 
 interface FcmOptions {
-	vapid_key?: string
-
-	sw_path?: string
+	swPath?: string
 }
 
 /**
@@ -15,43 +17,52 @@ interface FcmOptions {
  *
  * @param firebase - Firebase app
  *
- * @param options - Options
- * - `vapid_key` - VAPID key
- * - `sw_path` - Service worker path
+ * @param vapidKey - VAPID key
  *
+ * @param options - Options
+ * - `swPath` - Service worker path
+ *
+ * @example
+ * ```ts
+ * const { token, error, supported, messaging, onMessage } = fcm(firebase, vapidKey)
+ * ```
  * @returns
- * - `token` - Readable store with FCM token
- * - `error` - Readable store with error
- * - `supported` - Readable store with boolean value indicating if FCM is supported
+ * - `token` - Readable store that contains token
+ * - `error` - Readable store that contains error if one occurred
+ * - `supported` - Readable store that indicates whether FCM is supported
  * - `messaging` - Readable store with messaging instance
- * - `on_message` - Function for handling incoming messages
+ * - `onMessage` - Function for handling incoming messages
  *
  */
-export function fcm(firebase: FirebaseApp, options: FcmOptions = {}) {
-	const { vapid_key, sw_path } = options
+export function fcm(
+	firebase: FirebaseApp,
+	vapidKey: string,
+	options: FcmOptions = {}
+) {
+	const { swPath } = options
 
-	const token = to_writable<string | null>(null)
+	const token = toWritable<string | null>(null)
 
-	const error = to_writable<Error | null>(null)
+	const error = toWritable<Error | null>(null)
 
-	const supported = to_writable<boolean>(false)
+	const supported = toWritable<boolean>(false)
 
-	const messaging = to_writable<Messaging | null>(null)
+	const messaging = toWritable<Messaging | null>(null)
 
 	let sw: any
 
 	/** Create messaging instance and get token */
 	async function init() {
-		if (sw_path) {
+		if (swPath) {
 			try {
-				sw = await navigator.serviceWorker.register(sw_path)
+				sw = await navigator.serviceWorker.register(swPath)
 			} catch {
 				error.set(new Error("Service worker registration failed"))
 			}
 		}
 
 		const token_options: GetTokenOptions = {
-			vapidKey: vapid_key,
+			vapidKey: vapidKey,
 			serviceWorkerRegistration: sw,
 		}
 
@@ -80,17 +91,30 @@ export function fcm(firebase: FirebaseApp, options: FcmOptions = {}) {
 		init()
 	}
 
-	function on_message(fn: (payload: unknown) => void) {
+	/** Handle incoming messages
+	 *
+	 * @param fn - Function to handle incoming messages
+	 *
+	 * @example
+	 * ```ts
+	 * const { onMessage } = fcm(firebase, vapidKey)
+	 *
+	 * onMessage((payload) => {
+	 * 	console.log(payload)
+	 * })
+	 * ```
+	 */
+	function onMessage(fn: (payload: unknown) => void) {
 		const _messaging = unstore(messaging)
 
-		if (_messaging) onMessage(_messaging, fn)
+		if (_messaging) _onMessage(_messaging, fn)
 	}
 
 	return {
-		token: to_readable(token),
-		error: to_readable(error),
-		supported: to_readable(supported),
-		messaging: to_readable(messaging),
-		on_message,
+		token: toReadable(token),
+		error: toReadable(error),
+		supported: toReadable(supported),
+		messaging: toReadable(messaging),
+		onMessage,
 	}
 }
